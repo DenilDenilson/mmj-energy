@@ -15,13 +15,17 @@ export default function Page () {
         action={ async (formData) => {
           const credentials = Object.fromEntries(formData)
           const errorState = await signInServer(credentials)
-          if (errorState !== undefined) { // signInServer cuando el usuario es correcto
-            // devuelve undefined
+          console.log('* Error: ', errorState.error)
+          if (errorState.error === 'CredentialsSignin') {
+            // Auth js lanza este error al no encontrar el usuario
             setError(true)
+          } else if (errorState.error === 'Error') {
+            // Auth js lanza este error al encontrar el usuario
             redirect('/dashboard')
           } else {
-            // inició sesión correctamente
-            // Lo mandamos a la ruta /dashboard
+            // Caso para errores desconocidos
+            console.log('* Error al iniciar sesión: ', errorState.error)
+            setError(true)
           }
         }}
       >
