@@ -8,13 +8,13 @@ export default async function Home () {
     return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
         <h1 className="text-4xl font-bold text-center">
-          Bienvenido a Next Js, con Ably y Auth js
+          Bienvenido al controlador de PLC IoT Industrial
         </h1>
         <p className="text-center">
-          Para continuar, inicia sesión.
+          Para acceder al dashboard, inicia sesión
         </p>
 
-      <Link href="/api/auth/signin">Inicia sesión</Link>
+      <Link className='border-2 border-black hover:bg-slate-100 cursor-pointer px-8 py-2' href="/api/auth/signin">Inicia sesión</Link>
     </main>
     )
   } else {
