@@ -11,6 +11,6 @@ export async function GET (request: NextRequest) {
     key: process.env.ABLY_API_KEY,
     recover: (_, cb) => { cb(true) }
   })
-  const tokenRequestData = await client.auth.createTokenRequest({ clientId: 'ably-daq-mina' })
+  const tokenRequestData = await client.auth.createTokenRequest({ clientId: 'daq-lora-mina' })
   return Response.json(tokenRequestData)
 };
