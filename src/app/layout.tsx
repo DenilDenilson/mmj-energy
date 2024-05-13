@@ -5,8 +5,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Logo DAQ',
-  description: 'Dashboard para la visualización de datos de la calidad de aire'
+  title: 'PLC IOT MMJ',
+  description: 'Dashboard para la visualización y control de un PLC IoT'
 }
 
 export default function RootLayout ({

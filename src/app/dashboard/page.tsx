@@ -1,27 +1,26 @@
 import Footer from '@/components/Footer'
 import NavBar from '@/components/NavBar'
-import Bars from '@/components/data/Bars'
-import Lines from '@/components/data/Lines'
-// import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic'
 
-// const DashboardAbly = dynamic(async () => await import('@/components/dashboardAbly'), { ssr: false })
-// const MessageReceived = dynamic(async () => await import('@/components/MessageReceived'), { ssr: false })
+const DashboardAbly = dynamic(async () => await import('@/components/dashboardAbly'), { ssr: false })
+const VoltageProvider = dynamic(async () => await import('@/components/VoltageProvider'), { ssr: false })
+const Leds = dynamic(async () => await import('@/components/data/Leds'), { ssr: false })
+const Control = dynamic(async () => await import('@/components/data/Control'), { ssr: false })
 
 export default function Page () {
   return (
     <main className="bg-slate-200 min-h-screen">
       <NavBar />
-      <section className='px-4 py-8 flex items-center justify-center flex-wrap gap-4'>
-        <Bars title='CO3' />
-        <Lines title='Temperatura' />
-        <Lines title='Humedad Relativa' />
-        <Bars title='Gas' />
-        <Lines title='Altitud' />
-        <Lines title='Presión Atmosférica' />
-      </section>
-      {/* <DashboardAbly> */}
-        {/* <MessageReceived />
-      </DashboardAbly> */}
+      <DashboardAbly>
+        <section className='p-4 grid grid-rows-[656px_256px] grid-cols-1 gap-2'>
+          <VoltageProvider />
+          <section className="flex items-center gap-1">
+            <Leds />
+            <Control />
+          </section>
+        </section>
+        {/* <MessageReceived /> */}
+      </DashboardAbly>
       <Footer />
     </main>
   )
