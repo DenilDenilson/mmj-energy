@@ -28,9 +28,22 @@ export default async function Home() {
             className="max-w-80 border-2 border-[#091834] p-4 md:max-w-2xl lg:max-w-5xl"
           />
           <p className="max-w-3xl text-pretty text-center text-sm font-medium leading-5 tracking-wide text-neutral-500 md:text-base lg:text-lg lg:font-normal lg:leading-6">
-            Este es un controlador de PLC IoT industrial diseñado y desarrollado
-            localmente por MMJ. Este cuenta con entradas analógicas y digitales,
-            salidas analógicas y digitales
+            Este es un PLC IoT diseñado y fabricado localmente por MMJ Smart
+            Electronics SAC. Este cuenta con alimentación de 24V, 6 entradas
+            digitales de 24V, 2 entradas de analógicas de 0 a 10V, 4 salidas
+            tipo Rly,{' '}
+            <span className="font-semibold text-[#091834]">
+              conectividad Ethernet, RS485, WiFi y RF
+            </span>
+            . Tiene la capacidad de poder digitalizar tus datos en la nube
+            mediante diversas comunicaciones alámbricas e inalámbricas y brindar
+            un
+            <span className="font-semibold text-[#091834]">
+              monitoreo y control a tiempo real
+            </span>
+            . Hoy en día en un mundo cada vez más interconectados no solo los
+            seres humanos tienen la necesidad de conectarse a internet sino
+            también tus procesos, cosas, animales, activos, etc.
           </p>
         </section>
 
