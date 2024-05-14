@@ -21,7 +21,7 @@ export default function Contactor({
   }
 
   return (
-    <label className="inline-flex cursor-pointer items-center lg:-rotate-90">
+    <label className="inline-flex mb-4 xl:mb-0 cursor-pointer items-center xl:-rotate-90">
       <input
         id="contactor"
         type="checkbox"

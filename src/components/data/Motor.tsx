@@ -35,7 +35,7 @@ export default function Motor({ channel }: { channel: RealtimeChannel }) {
   }
 
   return (
-    <ul className="grid min-w-[512px] grid-cols-1 grid-rows-3 justify-items-center gap-8 px-4 py-4 lg:grid-cols-3 lg:grid-rows-1 lg:py-0">
+    <ul className="grid grid-cols-1 grid-rows-3 justify-items-center gap-8 px-4 py-4 lg:grid-cols-3 lg:grid-rows-1 lg:py-0">
       <li className="flex flex-col gap-4 text-center text-xl font-semibold tracking-wider text-[#091834]">
         LED 1
         <button className="pushable" onClick={led1on}>

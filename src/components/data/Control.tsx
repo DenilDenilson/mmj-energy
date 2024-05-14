@@ -23,7 +23,7 @@ export default function Control() {
   })
 
   return (
-    <section className="flex h-full w-full flex-col items-center justify-center bg-slate-100 py-4 shadow-lg shadow-slate-400 lg:flex-row lg:py-0 ">
+    <section className="flex h-full w-full flex-col items-center justify-center bg-slate-100 py-4 shadow-lg shadow-slate-400 xl:flex-row xl:py-0 ">
       <Contactor channel={channel} isChecked={isChecked} />
       <Motor channel={channel} />
     </section>

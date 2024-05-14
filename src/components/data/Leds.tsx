@@ -51,7 +51,7 @@ export default function Leds() {
     }
   })
   return (
-    <ul className="grid h-full min-w-[512px] grid-cols-3 grid-rows-2 justify-items-center gap-4 bg-slate-100 px-4 py-4 shadow-lg shadow-slate-400">
+    <ul className="grid h-full w-full lg:min-w-[512px] grid-cols-3 grid-rows-2 justify-items-center gap-4 bg-slate-100 px-4 py-4 shadow-lg shadow-slate-400">
       <div className="flex flex-col items-center justify-center gap-2">
         <li className={ledStyle}></li>
         <p className="w-full border border-neutral-400 bg-neutral-200 py-1 text-center font-mono text-xl font-semibold tracking-widest text-[#091834]">
