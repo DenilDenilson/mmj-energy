@@ -6,12 +6,13 @@ import Lines from './data/Lines'
 import { type Message } from 'ably'
 import { decodeMessage } from '@/utils/decodeMessage'
 import { useState } from 'react'
+import { dataTension1, dataTension2, dataTensionTable } from '@/Simulate/data'
 
 export default function VoltageProvider () {
   const [receivedMessages, setMessages] = useState<Message[]>([])
-  const [tension1, setTension1] = useState<Array<{ date: string, value: number }>>([])
-  const [tension2, setTension2] = useState<Array<{ date: string, value: number }>>([])
-  const [tensionTable, setTensionTable] = useState<Array<{ date: string, 'Tensión 1': number, 'Tensión 2': number }>>([])
+  const [tension1, setTension1] = useState<Array<{ date: string, value: number }>>(dataTension1)
+  const [tension2, setTension2] = useState<Array<{ date: string, value: number }>>(dataTension2)
+  const [tensionTable, setTensionTable] = useState<Array<{ date: string, 'Tensión 1': number, 'Tensión 2': number }>>(dataTensionTable)
 
   useChannel('mmj-plc/ain', (message) => {
     message = decodeMessage(message)

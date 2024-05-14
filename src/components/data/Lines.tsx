@@ -67,6 +67,7 @@ export default function Lines ({ title, chartData }: LineProps) {
       index="date"
       categories={['value']}
       className="w-full h-64 mt-4"
+      colors={['rose']}
     />
     </div>
   )
