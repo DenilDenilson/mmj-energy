@@ -5,7 +5,13 @@ import { useChannel } from 'ably/react'
 import { useState } from 'react'
 
 export default function Leds() {
-  const [ledStyle, setLedStyle] = useState<string>('led-blue')
+  const [ledStyle1, setLedStyle1] = useState<string>('led-blue')
+  const [ledStyle2, setLedStyle2] = useState<string>('led-blue')
+  const [ledStyle3, setLedStyle3] = useState<string>('led-blue')
+  const [ledStyle4, setLedStyle4] = useState<string>('led-blue')
+  const [ledStyle5, setLedStyle5] = useState<string>('led-blue')
+  const [ledStyle6, setLedStyle6] = useState<string>('led-blue')
+
   const [leds, setLeds] = useState<number[]>([0, 0, 0, 0, 0, 0])
 
   useChannel('mmj-plc/din', (message) => {
@@ -20,70 +26,70 @@ export default function Leds() {
     setLeds([led1, led2, led3, led4, led5, led6])
 
     if (leds[0] > 0) {
-      setLedStyle('led-blue-active')
+      setLedStyle1('led-blue-active')
     } else {
-      setLedStyle('led-blue')
+      setLedStyle1('led-blue')
     }
     if (leds[1] > 0) {
-      setLedStyle('led-blue-active')
+      setLedStyle2('led-blue-active')
     } else {
-      setLedStyle('led-blue')
+      setLedStyle2('led-blue')
     }
     if (leds[2] > 0) {
-      setLedStyle('led-blue-active')
+      setLedStyle3('led-blue-active')
     } else {
-      setLedStyle('led-blue')
+      setLedStyle3('led-blue')
     }
     if (leds[3] > 0) {
-      setLedStyle('led-blue-active')
+      setLedStyle4('led-blue-active')
     } else {
-      setLedStyle('led-blue')
+      setLedStyle4('led-blue')
     }
     if (leds[4] > 0) {
-      setLedStyle('led-blue-active')
+      setLedStyle5('led-blue-active')
     } else {
-      setLedStyle('led-blue')
+      setLedStyle5('led-blue')
     }
     if (leds[5] > 0) {
-      setLedStyle('led-blue-active')
+      setLedStyle6('led-blue-active')
     } else {
-      setLedStyle('led-blue')
+      setLedStyle6('led-blue')
     }
   })
   return (
     <ul className="grid h-full w-full lg:min-w-[512px] grid-cols-3 grid-rows-2 justify-items-center gap-4 bg-slate-100 px-4 py-4 shadow-lg shadow-slate-400">
       <div className="flex flex-col items-center justify-center gap-2">
-        <li className={ledStyle}></li>
+        <li className={ledStyle1}></li>
         <p className="w-full border border-neutral-400 bg-neutral-200 py-1 text-center font-mono text-xl font-semibold tracking-widest text-[#091834]">
           {leds[0]}
         </p>
       </div>
       <div className="flex flex-col items-center justify-center gap-2">
-        <li className={ledStyle}></li>
+        <li className={ledStyle2}></li>
         <p className="w-full border border-neutral-400 bg-neutral-200 py-1 text-center font-mono text-xl font-semibold tracking-widest text-[#091834]">
           {leds[1]}
         </p>
       </div>
       <div className="flex flex-col items-center justify-center gap-2">
-        <li className={ledStyle}></li>
+        <li className={ledStyle3}></li>
         <p className="w-full border border-neutral-400 bg-neutral-200 py-1 text-center font-mono text-xl font-semibold tracking-widest text-[#091834]">
           {leds[2]}
         </p>
       </div>
       <div className="flex flex-col items-center justify-center gap-2">
-        <li className={ledStyle}></li>
+        <li className={ledStyle4}></li>
         <p className="w-full border border-neutral-400 bg-neutral-200 py-1 text-center font-mono text-xl font-semibold tracking-widest text-[#091834]">
           {leds[3]}
         </p>
       </div>
       <div className="flex flex-col items-center justify-center gap-2">
-        <li className={ledStyle}></li>
+        <li className={ledStyle5}></li>
         <p className="w-full border border-neutral-400 bg-neutral-200 py-1 text-center font-mono text-xl font-semibold tracking-widest text-[#091834]">
           {leds[4]}
         </p>
       </div>
       <div className="flex flex-col items-center justify-center gap-2">
-        <li className={ledStyle}></li>
+        <li className={ledStyle6}></li>
         <p className="w-full border border-neutral-400 bg-neutral-200 py-1 text-center font-mono text-xl font-semibold tracking-widest text-[#091834]">
           {leds[5]}
         </p>
