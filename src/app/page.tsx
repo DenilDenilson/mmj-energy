@@ -16,7 +16,7 @@ export default async function Home() {
             src="/Images/MMJ-Branding.png"
             alt="Logo de MMJ"
             width={256}
-            height={256}
+            height={108}
           />
         </div>
         <section className="flex flex-col items-center justify-center gap-4">

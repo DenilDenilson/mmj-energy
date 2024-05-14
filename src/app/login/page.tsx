@@ -43,7 +43,7 @@ export default function Page() {
               src="/Images/MMJ-Branding.png"
               alt="Logo"
               width={96}
-              height={96}
+              height={48}
             />
           </div>
         </div>

@@ -2,19 +2,29 @@ import Footer from '@/components/Footer'
 import NavBar from '@/components/NavBar'
 import dynamic from 'next/dynamic'
 
-const DashboardAbly = dynamic(async () => await import('@/components/dashboardAbly'), { ssr: false })
-const VoltageProvider = dynamic(async () => await import('@/components/VoltageProvider'), { ssr: false })
-const Leds = dynamic(async () => await import('@/components/data/Leds'), { ssr: false })
-const Control = dynamic(async () => await import('@/components/data/Control'), { ssr: false })
+const DashboardAbly = dynamic(
+  async () => await import('@/components/dashboardAbly'),
+  { ssr: false },
+)
+const VoltageProvider = dynamic(
+  async () => await import('@/components/VoltageProvider'),
+  { ssr: false },
+)
+const Leds = dynamic(async () => await import('@/components/data/Leds'), {
+  ssr: false,
+})
+const Control = dynamic(async () => await import('@/components/data/Control'), {
+  ssr: false,
+})
 
-export default function Page () {
+export default function Page() {
   return (
-    <main className="bg-slate-200 min-h-screen">
+    <main className="min-h-screen bg-slate-200">
       <NavBar />
       <DashboardAbly>
-        <section className='p-4 grid grid-rows-[656px_256px] grid-cols-1 gap-2'>
+        <section className="grid grid-cols-1 grid-rows-2 gap-2 p-4 lg:grid-cols-1 lg:grid-rows-[656px_384px]">
           <VoltageProvider />
-          <section className="flex items-center gap-1">
+          <section className="flex flex-col items-center gap-1 lg:flex-row">
             <Leds />
             <Control />
           </section>

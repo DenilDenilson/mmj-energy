@@ -2,12 +2,15 @@
 'use client'
 
 import { type RealtimeChannel } from 'ably'
-import { useState } from 'react'
 
-export default function Contactor ({ channel }: { channel: RealtimeChannel }) {
-  const [isChecked, setIsChecked] = useState(false)
+export default function Contactor({
+  channel,
+  isChecked,
+}: {
+  channel: RealtimeChannel
+  isChecked: boolean
+}) {
   const handleInputChange = () => {
-    setIsChecked(!isChecked)
     if (isChecked) {
       // turnOn()
       channel.publish({ data: 'contactor=off' })
@@ -17,25 +20,17 @@ export default function Contactor ({ channel }: { channel: RealtimeChannel }) {
     }
   }
 
-  // function turnOn () {
-  //   channel.publish('mmj-plc/btns', 'contactor=on')
-  // }
-
-  // function turnOff () {
-  //   channel.publish('mmj-plc/btns', 'contactor=off')
-  // }
-
   return (
-    <label className="inline-flex -rotate-90 items-center cursor-pointer">
+    <label className="inline-flex cursor-pointer items-center lg:-rotate-90">
       <input
-      id='contactor'
-      type="checkbox"
-      value=""
-      className="sr-only peer"
-      checked={isChecked}
-      onChange={handleInputChange}
+        id="contactor"
+        type="checkbox"
+        value=""
+        className="peer sr-only"
+        checked={isChecked}
+        onChange={handleInputChange}
       />
-      <div className="relative w-48 h-16 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-32 rtl:peer-checked:after:-translate-x-32 peer-checked:after:border-white after:content-[''] after:absolute after:top-[8px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-12 after:w-12 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+      <div className="peer relative h-16 w-48 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[8px] after:h-12 after:w-12 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-32 peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rtl:peer-checked:after:-translate-x-32 dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"></div>
     </label>
   )
 }
