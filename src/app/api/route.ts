@@ -2,6 +2,9 @@
 import Ably from 'ably'
 import type { NextRequest } from 'next/server'
 
+export const revalidate = 0 // Evita el error 401 de Ably
+// https://faqs.ably.com/40104-timestamp-not-current
+
 export async function GET (request: NextRequest) {
   if (typeof process.env.ABLY_API_KEY === 'undefined') {
     console.log('Error al cargar la API Key de Ably')
