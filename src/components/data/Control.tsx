@@ -17,7 +17,8 @@ export default function Control() {
     message = decodeMessage(message)
     if (message.data === 'contactor=on') {
       setIsChecked(true)
-    } else {
+    }
+    if (message.data === 'contactor=off') {
       setIsChecked(false)
     }
   })
