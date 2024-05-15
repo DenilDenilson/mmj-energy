@@ -49,8 +49,8 @@ export default function VoltageProvider() {
           message.timestamp !== null && message.timestamp !== undefined
             ? new Date(message.timestamp).toLocaleTimeString()
             : new Date().toLocaleDateString(),
-        'Tensión 1': message.data[0] as number,
-        'Tensión 2': message.data[1] as number,
+        'Tensión 1': message.data.split(',')[0] as number,
+        'Tensión 2': message.data.split(',')[1] as number,
       }),
     )
   })
