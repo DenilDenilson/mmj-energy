@@ -12,57 +12,53 @@ export default function Leds() {
   const [ledStyle5, setLedStyle5] = useState<string>('led-blue')
   const [ledStyle6, setLedStyle6] = useState<string>('led-blue')
 
+  const [reset, setReset] = useState<boolean>(false)
+
   const [leds, setLeds] = useState<number[]>([0, 0, 0, 0, 0, 0])
 
   useChannel('mmj-plc/din', (message) => {
     message = decodeMessage(message)
-    const led1 = parseInt(message.data.split(',')[0] as string) === leds[0]
-      ? leds[0]
-      : parseInt(message.data.split(',')[0] as string) + leds[0]
-    const led2 = parseInt(message.data.split(',')[1] as string) === leds[1]
-      ? leds[1]
-      : parseInt(message.data.split(',')[1] as string) + leds[1]
-    const led3 = parseInt(message.data.split(',')[2] as string) === leds[2]
-      ? leds[2]
-      : parseInt(message.data.split(',')[2] as string) + leds[2]
-    const led4 = parseInt(message.data.split(',')[3] as string) === leds[3]
-      ? leds[3]
-      : parseInt(message.data.split(',')[3] as string) + leds[3]
-    const led5 = parseInt(message.data.split(',')[4] as string) === leds[4]
-      ? leds[4]
-      : parseInt(message.data.split(',')[4] as string) + leds[4]
-    const led6 = parseInt(message.data.split(',')[5] as string) === leds[5]
-      ? leds[5]
-      : parseInt(message.data.split(',')[5] as string) + leds[5]
+    if (message.data === '0,0,0,0,0,0') setReset(true)
 
-    setLeds([led1, led2, led3, led4, led5, led6])
+    if (reset) {
+      setLeds((prevLeds) => prevLeds.map((prevLed, index) => (
+        parseInt(message.data.split(',')[index] as string) + prevLed
+      ))
+      )
+      setReset(false)
+    }
 
-    if (message.data.split(',')[0] === 1) {
+    if (message.data.split(',')[0] === '1') {
       setLedStyle1('led-blue-active')
     } else {
       setLedStyle1('led-blue')
     }
-    if (message.data.split(',')[1] === 1) {
+
+    if (message.data.split(',')[1] === '1') {
       setLedStyle2('led-blue-active')
     } else {
       setLedStyle2('led-blue')
     }
-    if (message.data.split(',')[2] === 1) {
+
+    if (message.data.split(',')[2] === '1') {
       setLedStyle3('led-blue-active')
     } else {
       setLedStyle3('led-blue')
     }
-    if (message.data.split(',')[3] === 1) {
+
+    if (message.data.split(',')[3] === '1') {
       setLedStyle4('led-blue-active')
     } else {
       setLedStyle4('led-blue')
     }
-    if (message.data.split(',')[4] === 1) {
+
+    if (message.data.split(',')[4] === '1') {
       setLedStyle5('led-blue-active')
     } else {
       setLedStyle5('led-blue')
     }
-    if (message.data.split(',')[5] === 1) {
+
+    if (message.data.split(',')[5] === '1') {
       setLedStyle6('led-blue-active')
     } else {
       setLedStyle6('led-blue')
