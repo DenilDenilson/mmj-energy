@@ -16,13 +16,25 @@ export default function Leds() {
 
   useChannel('mmj-plc/din', (message) => {
     message = decodeMessage(message)
-    const led1 = parseInt(message.data.split(',')[0] as string) + leds[0]
-    const led2 = parseInt(message.data.split(',')[1] as string) + leds[1]
-    const led3 = parseInt(message.data.split(',')[2] as string) + leds[2]
-    const led4 = parseInt(message.data.split(',')[3] as string) + leds[3]
-    const led5 = parseInt(message.data.split(',')[4] as string) + leds[4]
-    const led6 = parseInt(message.data.split(',')[5] as string) + leds[5]
-    console.log(led1, led2, led3, led4, led5, led6)
+    const led1 = parseInt(message.data.split(',')[0] as string) === leds[0]
+      ? leds[0]
+      : parseInt(message.data.split(',')[0] as string) + leds[0]
+    const led2 = parseInt(message.data.split(',')[1] as string) === leds[1]
+      ? leds[1]
+      : parseInt(message.data.split(',')[1] as string) + leds[1]
+    const led3 = parseInt(message.data.split(',')[2] as string) === leds[2]
+      ? leds[2]
+      : parseInt(message.data.split(',')[2] as string) + leds[2]
+    const led4 = parseInt(message.data.split(',')[3] as string) === leds[3]
+      ? leds[3]
+      : parseInt(message.data.split(',')[3] as string) + leds[3]
+    const led5 = parseInt(message.data.split(',')[4] as string) === leds[4]
+      ? leds[4]
+      : parseInt(message.data.split(',')[4] as string) + leds[4]
+    const led6 = parseInt(message.data.split(',')[5] as string) === leds[5]
+      ? leds[5]
+      : parseInt(message.data.split(',')[5] as string) + leds[5]
+
     setLeds([led1, led2, led3, led4, led5, led6])
 
     if (leds[0] > 0) {
