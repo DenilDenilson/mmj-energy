@@ -31,7 +31,7 @@ export default function VoltageProvider() {
           message.timestamp !== null && message.timestamp !== undefined
             ? new Date(message.timestamp).toLocaleTimeString()
             : new Date().toLocaleTimeString(),
-        value: message.data[0] as number,
+        value: message.data.split(',')[0] as number,
       }),
     )
     setTension2(
@@ -40,7 +40,7 @@ export default function VoltageProvider() {
           message.timestamp !== null && message.timestamp !== undefined
             ? new Date(message.timestamp).toLocaleTimeString()
             : new Date().toLocaleTimeString(),
-        value: message.data[1] as number,
+        value: message.data.split(',')[1] as number,
       }),
     )
     setTensionTable(
