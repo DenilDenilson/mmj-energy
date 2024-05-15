@@ -18,6 +18,7 @@ export default function Leds() {
 
   useChannel('mmj-plc/din', (message) => {
     message = decodeMessage(message)
+    console.log(message.data)
     if (message.data === '0,0,0,0,0,0') setReset(true)
 
     if (reset) {
@@ -26,6 +27,8 @@ export default function Leds() {
       ))
       )
       setReset(false)
+    } else {
+      // setLeds((message.data.split(',') as string[]).map((led) => parseInt(led)))
     }
 
     if (message.data.split(',')[0] === '1') {
