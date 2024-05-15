@@ -169,7 +169,7 @@ export default function TableData (
           </TableRow>
         </TableHead>
         <TableBody>
-          {tableData.map((item) => (
+          {tableData.toReversed().map((item) => (
             <TableRow key={item.date}>
               <TableCell>{item.date}</TableCell>
               <TableCell>
