@@ -37,32 +37,32 @@ export default function Leds() {
 
     setLeds([led1, led2, led3, led4, led5, led6])
 
-    if (leds[0] > 0) {
+    if (message.data.split(',')[0] === 1) {
       setLedStyle1('led-blue-active')
     } else {
       setLedStyle1('led-blue')
     }
-    if (leds[1] > 0) {
+    if (message.data.split(',')[1] === 1) {
       setLedStyle2('led-blue-active')
     } else {
       setLedStyle2('led-blue')
     }
-    if (leds[2] > 0) {
+    if (message.data.split(',')[2] === 1) {
       setLedStyle3('led-blue-active')
     } else {
       setLedStyle3('led-blue')
     }
-    if (leds[3] > 0) {
+    if (message.data.split(',')[3] === 1) {
       setLedStyle4('led-blue-active')
     } else {
       setLedStyle4('led-blue')
     }
-    if (leds[4] > 0) {
+    if (message.data.split(',')[4] === 1) {
       setLedStyle5('led-blue-active')
     } else {
       setLedStyle5('led-blue')
     }
-    if (leds[5] > 0) {
+    if (message.data.split(',')[5] === 1) {
       setLedStyle6('led-blue-active')
     } else {
       setLedStyle6('led-blue')
