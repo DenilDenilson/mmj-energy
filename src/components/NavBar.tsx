@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function NavBar () {
   return (
-    <nav className="bg-[#78140d] text-white">
+    <nav className="bg-[#78140d] text-white fixed w-full z-10">
       <div className="flex items-center justify-between p-4">
         <h1 className="text-xl font-semibold">
           Controlador PLC IoT

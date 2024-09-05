@@ -57,57 +57,59 @@ export default function VoltageProvider() {
   })
 
   return (
-    <section className="grid grid-cols-[400px_minmax(200px,_1fr)] grid-rows-2 gap-x-8 gap-y-4">
+    <section className="grid grid-cols-1 grid-rows-4 gap-4 md:grid-cols-[400px_minmax(200px,_1fr)] md:grid-rows-2 md:gap-x-8 md:gap-y-4">
       <div className='grid grid-cols-2 grid-rows-3 gap-4'>
-        <div className='bg-white w-48 h-28 flex items-center justify-center gap-2'>
-          <h3 className='text-5xl font-bold text-gray-800'>270</h3>
-          <p className='text-2xl relative font-light text-gray-500'>
-            Irms
+        <div className='shadow-lg shadow-slate-400 bg-white w-40 h-24 md:w-48 md:h-28 flex items-center justify-center gap-2'>
+          <h3 className='text-3xl md:text-5xl font-bold text-gray-800'>270</h3>
+          <p className='text-lg md:text-2xl relative font-light text-gray-500'>
+            Vrms
             <div className='absolute w-12 h-1 -bottom-1 bg-red-500'></div>
           </p>
         </div>
-        <div className='bg-white w-48 h-28 flex items-center justify-center gap-2'>
-          <h3 className='text-5xl font-bold text-gray-800'>270</h3>
-          <p className='text-2xl relative font-light text-gray-500'>
+        <div className='shadow-lg shadow-slate-400 bg-white w-40 h-24 md:w-48 md:h-28 flex items-center justify-center gap-2'>
+          <h3 className='text-3xl md:text-5xl font-bold text-gray-800'>270</h3>
+          <p className='text-lg md:text-2xl relative font-light text-gray-500'>
             Irms
-            <div className='absolute w-12 h-1 -bottom-1 bg-red-500'></div>
+            <div className='absolute w-12 h-1 -bottom-1 bg-orange-500'></div>
           </p>
         </div>
-        <div className='bg-white w-48 h-28 flex items-center justify-center gap-2'>
-          <h3 className='text-5xl font-bold text-gray-800'>270</h3>
-          <p className='text-2xl relative font-light text-gray-500'>
-            Irms
-            <div className='absolute w-12 h-1 -bottom-1 bg-red-500'></div>
+        <div className='shadow-lg shadow-slate-400 bg-white w-40 h-24 md:w-48 md:h-28 flex items-center justify-center gap-2'>
+          <h3 className='text-3xl md:text-5xl font-bold text-gray-800'>270</h3>
+          <p className='text-lg md:text-2xl relative font-light text-gray-500'>
+            Wact
+            <div className='absolute w-12 h-1 -bottom-1 bg-sky-500'></div>
           </p>
         </div>
-        <div className='bg-white w-48 h-28 flex items-center justify-center gap-2'>
-          <h3 className='text-5xl font-bold text-gray-800'>270</h3>
-          <p className='text-2xl relative font-light text-gray-500'>
-            Irms
-            <div className='absolute w-12 h-1 -bottom-1 bg-red-500'></div>
+        <div className='shadow-lg shadow-slate-400 bg-white w-40 h-24 md:w-48 md:h-28 flex items-center justify-center gap-2'>
+          <h3 className='text-3xl md:text-5xl font-bold text-gray-800'>270</h3>
+          <p className='text-lg md:text-2xl relative font-light text-gray-500'>
+            Hertz
+            <div className='absolute w-12 h-1 -bottom-1 bg-purple-600'></div>
           </p>
         </div>
-        <div className='bg-white w-48 h-28 flex items-center justify-center gap-2'>
-          <h3 className='text-5xl font-bold text-gray-800'>270</h3>
-          <p className='text-2xl relative font-light text-gray-500'>
-            Irms
-            <div className='absolute w-12 h-1 -bottom-1 bg-red-500'></div>
+        <div className='shadow-lg shadow-slate-400 bg-white w-40 h-24 md:w-48 md:h-28 flex items-center justify-center gap-2'>
+          <h3 className='text-3xl md:text-5xl font-bold text-gray-800'>270</h3>
+          <p className='text-lg md:text-2xl relative font-light text-gray-500'>
+            VA
+            <div className='absolute w-12 h-1 -bottom-1 bg-cyan-600'></div>
           </p>
         </div>
-        <div className='bg-white w-48 h-28 flex items-center justify-center gap-2'>
-          <h3 className='text-5xl font-bold text-gray-800'>270</h3>
-          <p className='text-2xl relative font-light text-gray-500'>
-            Irms
-            <div className='absolute w-12 h-1 -bottom-1 bg-red-500'></div>
+        <div className='shadow-lg shadow-slate-400 bg-white w-40 h-24 md:w-48 md:h-28 flex items-center justify-center gap-2'>
+          <h3 className='text-3xl md:text-5xl font-bold text-gray-800'>270</h3>
+          <p className='text-lg md:text-2xl relative font-light text-gray-500'>
+            Wrea
+            <div className='absolute w-12 h-1 -bottom-1 bg-blue-800'></div>
           </p>
         </div>
       </div>
       <div className="flex flex-col items-center gap-2">
         <Lines title="Voltaje" color={['rose']} chartData={tension1} />
       </div>
-      <Pie />
-      <div className="flex flex-col items-center gap-2">
+      <div className="flex flex-col items-center gap-2 md:col-start-2 md:col-span-1">
         <Lines title="Corriente" color={['amber']} chartData={tension2} />
+      </div>
+      <div className='shadow-lg shadow-slate-400 bg-white p-4 pt-8 md:col-start-1 md:col-span-1 md:row-start-2 md:row-span-1'>
+        <Pie />
       </div>
       {/* <div className="max-h-[364px] overflow-scroll lg:max-h-[700px]">
         <TableData tableData={tensionTable} />

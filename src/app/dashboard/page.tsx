@@ -23,10 +23,10 @@ export default function Page() {
   return (
     <main className="overflow-y-hidden bg-neutral-300">
       <NavBar />
-      <div className='grid grid-cols-[256px_minmax(384px,_1fr)]'>
+      <div className='h-screen overflow-y-auto'>
         <NavIntern />
         <DashboardAbly>
-          <section className="p-4">
+          <section className="p-4 ml-14 md:ml-64 pt-20">
             <h1 className='font-semibold text-xl'>Indicadores principales para la señal</h1>
             <h3 className='font-medium text-gray-500 mb-2'>Para una instalación monofásica</h3>
             <VoltageProvider />
