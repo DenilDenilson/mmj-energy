@@ -21,20 +21,18 @@ const VoltageProvider = dynamic(
 
 export default function Page() {
   return (
-    <main className="overflow-y-hidden bg-neutral-300">
+    <main className="min-h-screen bg-neutral-300">
       <NavBar />
       <div className='grid grid-cols-[256px_minmax(384px,_1fr)]'>
         <NavIntern />
         <DashboardAbly>
-          <section className="p-4">
-            <h1 className='font-semibold text-xl'>Indicadores principales para la señal</h1>
-            <h3 className='font-medium text-gray-500 mb-2'>Para una instalación monofásica</h3>
+          {/* {/* <section className="grid grid-cols-1 grid-rows-2 gap-2 p-4 lg:grid-cols-1 lg:grid-rows-[656px_384px]"> */}
             <VoltageProvider />
-            {/* <section className="flex flex-col items-center gap-1 lg:flex-row">
-              <Leds />
-              <Control />
-            </section> */}
-          </section>
+            {/* <section className="flex flex-col items-center gap-1 lg:flex-row"> */}
+              {/* <Leds /> */}
+              {/* <Control /> */}
+            {/* </section> */}
+          {/* </section> */}
           {/* <MessageReceived /> */}
         </DashboardAbly>
       </div>

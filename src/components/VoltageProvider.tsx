@@ -2,12 +2,13 @@
 'use client'
 
 import { useChannel } from 'ably/react'
-import TableData from './data/TableData'
+// import TableData from './data/TableData'
 import Lines from './data/Lines'
 import { type Message } from 'ably'
 import { decodeMessage } from '@/utils/decodeMessage'
 import { useState } from 'react'
 import { dataTension1, dataTension2, dataTensionTable } from '@/Simulate/data'
+import { Pie } from './data/Pie'
 
 export default function VoltageProvider() {
   const [receivedMessages, setMessages] = useState<Message[]>([])
@@ -56,14 +57,61 @@ export default function VoltageProvider() {
   })
 
   return (
-    <section className="lr:grid-rows-1 flex flex-col gap-2 lg:grid lg:grid-cols-[512px_minmax(256px,_1fr)]">
+    <section className="grid grid-cols-[400px_minmax(200px,_1fr)] grid-rows-2 gap-x-8 gap-y-4">
+      <div className='grid grid-cols-2 grid-rows-3 gap-4'>
+        <div className='bg-white w-48 h-28 flex items-center justify-center gap-2'>
+          <h3 className='text-5xl font-bold text-gray-800'>270</h3>
+          <p className='text-2xl relative font-light text-gray-500'>
+            Irms
+            <div className='absolute w-12 h-1 -bottom-1 bg-red-500'></div>
+          </p>
+        </div>
+        <div className='bg-white w-48 h-28 flex items-center justify-center gap-2'>
+          <h3 className='text-5xl font-bold text-gray-800'>270</h3>
+          <p className='text-2xl relative font-light text-gray-500'>
+            Irms
+            <div className='absolute w-12 h-1 -bottom-1 bg-red-500'></div>
+          </p>
+        </div>
+        <div className='bg-white w-48 h-28 flex items-center justify-center gap-2'>
+          <h3 className='text-5xl font-bold text-gray-800'>270</h3>
+          <p className='text-2xl relative font-light text-gray-500'>
+            Irms
+            <div className='absolute w-12 h-1 -bottom-1 bg-red-500'></div>
+          </p>
+        </div>
+        <div className='bg-white w-48 h-28 flex items-center justify-center gap-2'>
+          <h3 className='text-5xl font-bold text-gray-800'>270</h3>
+          <p className='text-2xl relative font-light text-gray-500'>
+            Irms
+            <div className='absolute w-12 h-1 -bottom-1 bg-red-500'></div>
+          </p>
+        </div>
+        <div className='bg-white w-48 h-28 flex items-center justify-center gap-2'>
+          <h3 className='text-5xl font-bold text-gray-800'>270</h3>
+          <p className='text-2xl relative font-light text-gray-500'>
+            Irms
+            <div className='absolute w-12 h-1 -bottom-1 bg-red-500'></div>
+          </p>
+        </div>
+        <div className='bg-white w-48 h-28 flex items-center justify-center gap-2'>
+          <h3 className='text-5xl font-bold text-gray-800'>270</h3>
+          <p className='text-2xl relative font-light text-gray-500'>
+            Irms
+            <div className='absolute w-12 h-1 -bottom-1 bg-red-500'></div>
+          </p>
+        </div>
+      </div>
       <div className="flex flex-col items-center gap-2">
-        <Lines title="Tensión 1" chartData={tension1} />
-        <Lines title="Tensión 2" chartData={tension2} />
+        <Lines title="Voltaje" color={['rose']} chartData={tension1} />
       </div>
-      <div className="max-h-[364px] overflow-scroll lg:max-h-[700px]">
+      <Pie />
+      <div className="flex flex-col items-center gap-2">
+        <Lines title="Corriente" color={['amber']} chartData={tension2} />
+      </div>
+      {/* <div className="max-h-[364px] overflow-scroll lg:max-h-[700px]">
         <TableData tableData={tensionTable} />
-      </div>
+      </div> */}
     </section>
   )
 }

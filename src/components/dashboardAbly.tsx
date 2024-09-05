@@ -16,11 +16,11 @@ export default function DashboardAbly (
   return (
     <AblyProvider client={ client }>
       <ChannelProvider channelName='mmj-plc/ain'>
-        <ChannelProvider channelName='mmj-plc/din'>
-          <ChannelProvider channelName='mmj-plc/btns'>
+        {/* <ChannelProvider channelName='mmj-plc/din'> */}
+          {/* <ChannelProvider channelName='mmj-plc/btns'> */}
             {children}
-          </ChannelProvider>
-        </ChannelProvider>
+          {/* </ChannelProvider> */}
+        {/* </ChannelProvider> */}
       </ChannelProvider>
     </AblyProvider>
   )

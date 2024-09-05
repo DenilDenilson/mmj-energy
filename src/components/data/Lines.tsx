@@ -1,5 +1,5 @@
 import { LineChart } from '@tremor/react'
-
+// import { LineChart } from '@/components/LineChart'
 // const chartdata = [
 //   {
 //     date: 'Jan 22',
@@ -54,18 +54,19 @@ import { LineChart } from '@tremor/react'
 interface LineProps {
   title: string
   chartData: Array<{ date: string, value: number }>
+  color: string[]
 }
 
-export default function Lines({ title, chartData }: LineProps) {
+export default function Lines({ title, chartData, color }: LineProps) {
   return (
-    <div className="max-w-[512px] w-full bg-slate-100 p-4 shadow-lg shadow-slate-400 lg:min-w-[384px]">
+    <div className=" w-full bg-slate-100 p-4 shadow-lg shadow-slate-400 lg:min-w-[384px]">
       <h3 className="text-sm font-semibold tracking-wide"> &bull; {title}</h3>
       <LineChart
         data={chartData}
         index="date"
         categories={['value']}
-        className="mt-4 max-h-64 w-full"
-        colors={['rose']}
+        className="mt-2 max-h-64 w-full"
+        colors={color}
       />
     </div>
   )
