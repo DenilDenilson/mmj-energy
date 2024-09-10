@@ -15,7 +15,7 @@ export default function DashboardAbly (
 
   return (
     <AblyProvider client={ client }>
-      <ChannelProvider channelName='mmj-plc/ain'>
+      <ChannelProvider channelName='mmj-plc/labview'>
         {/* <ChannelProvider channelName='mmj-plc/din'> */}
           {/* <ChannelProvider channelName='mmj-plc/btns'> */}
             {children}

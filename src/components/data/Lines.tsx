@@ -53,7 +53,7 @@ import { LineChart } from '@tremor/react'
 
 interface LineProps {
   title: string
-  chartData: Array<{ date: string, value: number }>
+  chartData: Array<{ date: number, value: number }>
   color: string[]
 }
 
@@ -66,6 +66,7 @@ export default function Lines({ title, chartData, color }: LineProps) {
         index="date"
         categories={['value']}
         className="mt-2 max-h-64 w-full"
+        startEndOnly
         colors={color}
       />
     </div>
